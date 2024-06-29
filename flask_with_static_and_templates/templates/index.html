@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Connect JavaScript -->
+    <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+</head>
+<body>
+    <!-- Render image -->
+    <img src="{{ url_for('static', filename='img/image.jpg') }}" alt="" style="height: 100px; width: 100px;">
+    
+    <!-- Button with event listener -->
+    <button>Click me!</button>
+
+    <!-- go to another page  -->
+    <a href="{{url_for('another')}}" style="color: black;">Another</a>
+    <!-- Connect JavaScript -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"> //this is because the link of the js is alway written on the bottom of the body </script> 
+</body>
+</html>

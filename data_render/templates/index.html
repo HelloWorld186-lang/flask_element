@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- This is a comment -->
+    <p>Name of the student: {{ name }}</p>
+    <table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <!-- subject is the key and marks is the element  -->
+        {% for subject, mark in marks.items() %}
+        <tr>
+            <td>{{ subject }}</td>
+            <td>{{ mark }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

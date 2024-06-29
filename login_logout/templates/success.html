@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            flex-direction: column;
+        }
+        .success-message, .flash-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+        .flash-message.error {
+            background-color: #f44336;
+        }
+        .flash-message.warning {
+            background-color: #ff9800;
+        }
+        .flash-message.info {
+            background-color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="success-message">
+        <h2>Login Successful!</h2>
+        <p>Welcome back! You have successfully logged in.</p>
+        <a href="{{ url_for('logout_fun') }}">Logout</a>
+    </div>
+
+</body>
+</html>

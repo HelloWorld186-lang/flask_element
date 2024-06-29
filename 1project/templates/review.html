@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Review</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Profile Review</h1>
+        <img src="{{ url_for('static', filename='img/' + user_photo) }}" alt="Profile Photo" class="profile-photo">
+        <div class="profile-info">
+            <p><strong>Username:</strong> {{ user_name }}</p>
+            <p><strong>Email Address:</strong> {{ user_email }}</p>
+            <p><strong>Phone Number:</strong> {{ user_phone }}</p>
+            <p><strong>Address:</strong> {{ user_address }}</p>
+        </div>
+    </div>
+</body>
+</html>
